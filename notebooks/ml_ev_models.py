@@ -17,9 +17,9 @@ sns.set_theme(style="whitegrid")
 # 1. Load cleaned dataset
 df = pd.read_csv("../data_processed/ev_market_clean.csv")
 
-print("==========================================================")
+
 print("   MODEL 1: PREDICTING ELECTRIC RANGE (REGRESSION)        ")
-print("==========================================================")
+print("----------------------------------------------------------")
 
 # Filter vehicles with tested electric range (> 0) for training
 tested_df = df[df['Electric Range'] > 0].copy()
@@ -52,9 +52,9 @@ print(f"R2 Accuracy Score: {r2 * 100:.2f}%")
 print(f"Mean Absolute Error (MAE): {mae:.2f} miles")
 
 
-print("\n==========================================================")
+
 print("   MODEL 2: TAX INCENTIVE ELIGIBILITY (CLASSIFICATION)    ")
-print("==========================================================")
+print("----------------------------------------------------------")
 
 # Keep known eligibility records (Eligible vs Not Eligible)
 clf_df = tested_df[tested_df['Clean Alternative Fuel Vehicle (CAFV) Eligibility'].isin(['Eligible', 'Not Eligible (Low Range)'])].copy()
@@ -76,9 +76,9 @@ print(f"Classification Accuracy: {acc * 100:.2f}%")
 
 
 
-print("\n==========================================================")
+
 print("   MODEL 3: FUTURE EV MARKET FORECASTING (2024 - 2028)    ")
-print("==========================================================")
+print("----------------------------------------------------------")
 
 # Prepare historical yearly registrations (2013 - 2023)
 yearly_data = df[(df['Model Year'] >= 2013) & (df['Model Year'] <= 2023)].groupby('Model Year').size().reset_index(name='Registrations')
@@ -121,9 +121,9 @@ plt.savefig("ev_future_forecast.png", dpi=300)
 plt.close()
 
 
-print("\n==========================================================")
+
 print("   MODEL 4: TOP 5 BRANDS DEMAND FORECAST (2027 & 2028)    ")
-print("==========================================================")
+print("----------------------------------------------------------")
 
 top_5_brands = df['Make'].value_counts().head(5).index
 brand_forecasts = []
