@@ -4,8 +4,8 @@
 # تحليل بيانات سوق السيارات الكهربائية في ولاية واشنطن (EV Market Data Analysis)
 # Electric Vehicle (EV) Market Data Analysis — Washington State
 
-🔗 [**لوحة التحكم التفاعلية / Live Interactive Dashboard**]https://docs.google.com/spreadsheets/d/1Pq_ER9iavfJ2PEkpFsPSQ6vFHiuiybln8XwA9X3ZZZI/edit?usp=sharing)
-
+🔗 [**لوحة التحكم التفاعلية (Tableau Public) / Interactive Tableau Dashboard**](https://public.tableau.com/shared/CQ6XB9G26?:display_count=n&:origin=viz_share_link) 
+📊 [**لوحة التحكم التفاعلية (Google Sheets) / Interactive Google Sheets Dashboard**](https://docs.google.com/spreadsheets/d/1Pq_ER9iavfJ2PEkpFsPSQ6vFHiuiybln8XwA9X3ZZZI/edit?usp=sharing)
 ---
 
 ##  ملخص المشروع 
@@ -42,6 +42,14 @@
 
 ### 4. أكثر 10 مدن تركزاً للسيارات الكهربائية / Top 10 Cities by EV Concentration
 ![Top 10 EV Cities](notebooks/top_10_ev_cities.png)
+
+## 🤖 نماذج تعلم الآلة والتنبؤ / Machine Learning & Predictive Modeling (`ml_ev_models.py`)
+
+* **توقع المدى الكهربائي (Random Forest Regressor):** حقق النموذج دقة **R² = 99.59%** بمتوسط خطأ **1.52 ميل** لتقدير المدى الكهربائي للسيارات غير المختبرة.
+* **تصنيف الإعفاء الضريبي (Decision Tree Classifier):** حقق دقة **100%** في تصنيف أهلية السيارات للدعم الحكومي (`CAFV`).
+* **التنبؤ بنمو السوق (Polynomial Forecasting):** يتوقع النموذج استمرار نمو التسجيلات السنوية لتصل إلى **29,674** سيارة في 2024، و**34,147** في 2025، و**38,973** في 2026.
+
+![EV Future Forecast](notebooks/ev_future_forecast.png)
 
 ---
 
